@@ -10,6 +10,8 @@ sysctl -w net.core.net_budget=900
 #### 2)Also you HAVE to setup coin daemon for a multithreading, default values are low
 ``
 rcpthreads=300
+``
+``
 rpcworkqueue=128
 ``
 
