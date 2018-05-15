@@ -295,8 +295,8 @@ function SetupForPool(logger, poolOptions, setupFinished){
 
         var amount = satoshisToCoins(zBalance - 10000);
         // unshield no more than 100 ZEC at a time
-        if (amount > 100.0)
-            amount = 100.0;
+        if (amount > 1000.0)
+            amount = 1000.0;
 
         var params = [poolOptions.zAddress, [{'address': poolOptions.tAddress, 'amount': amount}]];
         daemon.cmd('z_sendmany', params,
@@ -428,7 +428,7 @@ function SetupForPool(logger, poolOptions, setupFinished){
     }
     
     // network stats caching every 58 seconds
-    var stats_interval = 58 * 1000;
+    var stats_interval = 15 * 1000;
     var statsInterval = setInterval(function() {
         // update network stats using coin daemon
         cacheNetworkStats();
@@ -444,7 +444,7 @@ function SetupForPool(logger, poolOptions, setupFinished){
     }
 
     // check operation statuses every 57 seconds
-    var opid_interval =  57 * 1000;
+    var opid_interval =  15 * 1000;
     // shielding not required for some equihash coins
     if (requireShielding === true) {
         var checkOpids = function() {
