@@ -2,7 +2,6 @@ I did some tuning of payment processing.
 
 
 #### 1)This pool NEEDS net_budget to be configured for a value ore than 900 because of coin daemon multiple connections
-================================================================================================================
 
 ``
 sysctl -w net.core.net_budget=900
